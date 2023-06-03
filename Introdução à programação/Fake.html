@@ -1,0 +1,3256 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Sistema Integrado de Gest&#227;o de Atividades Acad&#234;micas</title>
+    <link class="component"
+        href="/sigaa/a4j/s/3_3_3.Finalorg/richfaces/renderkit/html/css/basic_classes.xcss/DATB/eAF7sqpgb-jyGdIAFrMEaw__.jsf"
+        rel="stylesheet" type="text/css" />
+    <link class="component"
+        href="/sigaa/a4j/s/3_3_3.Finalorg/richfaces/renderkit/html/css/extended_classes.xcss/DATB/eAF7sqpgb-jyGdIAFrMEaw__.jsf"
+        media="rich-extended-skinning" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        window.RICH_FACES_EXTENDED_SKINNING_ON = true;
+    </script>
+    <script src="/sigaa/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/skinning.js.jsf" type="text/javascript">
+    </script>
+    <script type="text/javascript" src="/shared/javascript/sigaa.js"> </script>
+</head>
+
+<link href="/shared/css/ufrn_relatorio.css" rel="stylesheet" type="text/css" />
+<link href="/shared/css/ufrn.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" media="print" href="/shared/css/ufrn_print.css" />
+
+<body>
+
+    <div id="relatorio-paisagem-container">
+
+        <div id="relatorio-cabecalho">
+            <div id="ufrn"><img src="http://sistemas.ifal.edu.br/shared/img/instituicao/logo_ifal.jpg"
+                    height="100" /><br /><a href='/sigaa/ava/index.jsf'>Turma Virtual</a> </div>
+            <div id="sinfo"><img src="http://sistemas.ifal.edu.br/shared/img/instituicao/logo_dti.jpg" width="120" />
+            </div>
+            <div id="texto">
+                Instituto Federal de Alagoas<br>
+                Pro-Reitoria de Pesquisa, P&#243;s-Gradua&#231;&#227;o e Inova&#231;&#227;o<br>
+                Sistema Integrado de Gest&#227;o de Atividades Acad&#234;micas<br>
+
+
+                <br />
+                <span class="dataAtual"> Emitido em 30/11/2022 10:22 </span>
+            </div>
+            <div class="clear"> </div>
+        </div>
+        <div id="relatorio">
+
+            <br />
+
+
+            <style type="text/css">
+                div.opcoes {
+                    margin: 5px 0;
+                }
+
+                div.opcoes a {
+                    font-size: 0.9em;
+                }
+
+                tr.alunoSelecionado {
+                    background: #FF8888;
+                }
+
+                h3 {
+                    text-align: center;
+                    font-variant: small-caps;
+                    border-bottom: 1px solid #BBB;
+                    margin-bottom: 5px;
+                }
+
+                #relatorio th {
+                    font-weight: bold;
+                }
+
+                #relatorio .linha {
+                    border-bottom: 1px dashed #BBB;
+                }
+
+                #relatorio table tr td,
+                #relatorio table tr th {
+                    font-size: 0.9em
+                }
+
+                #relatorio .nota {
+                    width: 48px;
+                    text-align: center;
+                }
+
+                #relatorio .situacao {
+                    width: 85px;
+                    text-align: center;
+                }
+
+                #identificacao {
+                    border-bottom: 1px solid #CCC;
+                    width: 100%;
+                }
+
+                #identificacao td {
+                    font-size: 1.1em;
+                    padding: 2px;
+                }
+            </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <h3> Boletim Individual</h3>
+
+            <table id="identificacao">
+                <tr>
+                    <td width="168">
+                        <img src="/sigaa/img/celular.jpg" />
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <th> Aluno(a): </th>
+                                <td> THIAGO ROG&#201;RIO DE MELO - 2022325919 </td>
+                            </tr>
+                            <tr>
+                                <th> Curso: </th>
+                                <td> CURSO INTEGRADO AO ENSINO M&#201;DIO EM INFORM&#193;TICA (MT) (109) </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+
+                    </td>
+
+            </table>
+
+            <div class="notas" style="clear: both;">
+
+
+
+
+
+
+
+
+
+                </tbody>
+                </table>
+                <br />
+
+
+                <table class="tabelaRelatorio" width="100%">
+                    <caption>2022.1</caption>
+                    <thead>
+                        <tr>
+                            <th width="7%">C&#243;digo</th>
+                            <th width="30%">Disciplina</th>
+
+
+
+
+                            <th class="nota" nowrap="nowrap">
+                                Unidade 1
+                            </th>
+
+
+
+
+
+
+                            <th class="nota" nowrap="nowrap">
+                                Unidade 2
+                            </th>
+
+
+
+                            <th width="5%" style="text-align:center;">Recupera&#231;&#227;o Semestral</th>
+
+
+
+
+
+
+
+                            <th class="nota" nowrap="nowrap">
+                                Unidade 3
+                            </th>
+
+
+
+
+
+
+                            <th class="nota" nowrap="nowrap">
+                                Unidade 4
+                            </th>
+
+
+
+
+                            <th width="5%" style="text-align:center;">Recupera&#231;&#227;o Semestral</th>
+
+
+
+
+
+
+                            <th class="nota">Recupera&#231;&#227;o Final</th>
+
+
+                            <th class="nota">Resultado Final</th>
+
+
+                            <th class="nota" style="text-align: right;">Faltas</th>
+
+
+                            <th class="situacao">Situa&#231;&#227;o</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+                        <tr class="linhaPar linha">
+                            <td nowrap="nowrap">RIOINFARTE1</td>
+                            <td style="border-right: 1px solid #888;">ARTES</td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                7,50
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                7,50
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                10,00
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+                                S/N
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+                            </td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+
+                                --
+
+
+
+
+
+
+
+                            </td>
+
+                            <td class="nota" style="border-right: 1px solid #888;text-align: right;">
+
+                                0
+
+
+
+                            </td>
+
+
+                            <td width="50px" class="situacao">MATRICULADO</td>
+
+
+
+
+                            <!-- 							<td class="situacao"> -->
+
+                            <!-- 							</td> -->
+
+
+                        </tr>
+
+
+
+
+                        <tr class="linhaImpar linha">
+                            <td nowrap="nowrap">RIOINFBIOG1</td>
+                            <td style="border-right: 1px solid #888;">BIOLOGIA</td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                7,00
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                5,00
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                6,00
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+                                S/N
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                S/N
+
+
+
+
+                            </td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+
+                                --
+
+
+
+
+
+
+
+                            </td>
+
+                            <td class="nota" style="border-right: 1px solid #888;text-align: right;">
+
+                                0
+
+
+
+                            </td>
+
+
+                            <td width="50px" class="situacao">MATRICULADO</td>
+
+
+
+
+                            <!-- 							<td class="situacao"> -->
+
+                            <!-- 							</td> -->
+
+
+                        </tr>
+
+
+
+
+                        <tr class="linhaPar linha">
+                            <td nowrap="nowrap">RIOINFEDFI1</td>
+                            <td style="border-right: 1px solid #888;">EDUCA&#199;&#195;O F&#205;SICA</td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                5,80
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                8,90
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+                                7,90
+
+
+                            </td>
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                9,60
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                1,20
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+                            </td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+
+                                --
+
+
+
+
+
+
+
+                            </td>
+
+                            <td class="nota" style="border-right: 1px solid #888;text-align: right;">
+
+                                8
+
+
+
+                            </td>
+
+
+                            <td width="50px" class="situacao">MATRICULADO</td>
+
+
+
+
+                            <!-- 							<td class="situacao"> -->
+
+                            <!-- 							</td> -->
+
+
+                        </tr>
+
+
+
+
+                        <tr class="linhaImpar linha">
+                            <td nowrap="nowrap">RIOINFFILO1</td>
+                            <td style="border-right: 1px solid #888;">FILOSOFIA</td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                7,50
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                8,90
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                10,00
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+                                S/N
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+                            </td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+
+                                --
+
+
+
+
+
+
+
+                            </td>
+
+                            <td class="nota" style="border-right: 1px solid #888;text-align: right;">
+
+                                0
+
+
+
+                            </td>
+
+
+                            <td width="50px" class="situacao">MATRICULADO</td>
+
+
+
+
+                            <!-- 							<td class="situacao"> -->
+
+                            <!-- 							</td> -->
+
+
+                        </tr>
+
+
+
+
+                        <tr class="linhaPar linha">
+                            <td nowrap="nowrap">RIOINFFISC1</td>
+                            <td style="border-right: 1px solid #888;">F&#205;SICA</td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                3,20
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                4,50
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+                                7,00
+
+
+                            </td>
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                4,70
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                2,50
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                S/N
+
+
+
+
+                            </td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+
+                                --
+
+
+
+
+
+
+
+                            </td>
+
+                            <td class="nota" style="border-right: 1px solid #888;text-align: right;">
+
+                                2
+
+
+
+                            </td>
+
+
+                            <td width="50px" class="situacao">MATRICULADO</td>
+
+
+
+
+                            <!-- 							<td class="situacao"> -->
+
+                            <!-- 							</td> -->
+
+
+                        </tr>
+
+
+
+
+                        <tr class="linhaImpar linha">
+                            <td nowrap="nowrap">RIOINFFUIN1</td>
+                            <td style="border-right: 1px solid #888;">FUNDAMENTOS DA INFORM&#193;TICA</td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                5,50
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                4,00
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+                                8,00
+
+
+                            </td>
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                10,00
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                10,00
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+                            </td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+
+                                --
+
+
+
+
+
+
+
+                            </td>
+
+                            <td class="nota" style="border-right: 1px solid #888;text-align: right;">
+
+                                0
+
+
+
+                            </td>
+
+
+                            <td width="50px" class="situacao">MATRICULADO</td>
+
+
+
+
+                            <!-- 							<td class="situacao"> -->
+
+                            <!-- 							</td> -->
+
+
+                        </tr>
+
+
+
+
+                        <tr class="linhaPar linha">
+                            <td nowrap="nowrap">RIOINFGEOG1</td>
+                            <td style="border-right: 1px solid #888;">GEOGRAFIA</td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                8,00
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                9,00
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                5,00
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                0,00
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                S/N
+
+
+
+
+                            </td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+
+                                --
+
+
+
+
+
+
+
+                            </td>
+
+                            <td class="nota" style="border-right: 1px solid #888;text-align: right;">
+
+                                0
+
+
+
+                            </td>
+
+
+                            <td width="50px" class="situacao">MATRICULADO</td>
+
+
+
+
+                            <!-- 							<td class="situacao"> -->
+
+                            <!-- 							</td> -->
+
+
+                        </tr>
+
+
+
+
+                        <tr class="linhaImpar linha">
+                            <td nowrap="nowrap">RIOINFHIST1</td>
+                            <td style="border-right: 1px solid #888;">HIST&#211;RIA</td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                4,50
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                6,00
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+                                S/N
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+                                S/N
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+                            </td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+
+                                --
+
+
+
+
+
+
+
+                            </td>
+
+                            <td class="nota" style="border-right: 1px solid #888;text-align: right;">
+
+                                0
+
+
+
+                            </td>
+
+
+                            <td width="50px" class="situacao">MATRICULADO</td>
+
+
+
+
+                            <!-- 							<td class="situacao"> -->
+
+                            <!-- 							</td> -->
+
+
+                        </tr>
+
+
+
+
+                        <tr class="linhaPar linha">
+                            <td nowrap="nowrap">RIOINFINPR1</td>
+                            <td style="border-right: 1px solid #888;">INTRODU&#199;&#195;O &#192; PROGRAMA&#199;&#195;O
+                            </td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                8,30
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                2,70
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+                                6,90
+
+
+                            </td>
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                8,70
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+                                S/N
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+                            </td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+
+                                --
+
+
+
+
+
+
+
+                            </td>
+
+                            <td class="nota" style="border-right: 1px solid #888;text-align: right;">
+
+                                0
+
+
+
+                            </td>
+
+
+                            <td width="50px" class="situacao">MATRICULADO</td>
+
+
+
+
+                            <!-- 							<td class="situacao"> -->
+
+                            <!-- 							</td> -->
+
+
+                        </tr>
+
+
+
+
+                        <tr class="linhaImpar linha">
+                            <td nowrap="nowrap">RIOINFLING1</td>
+                            <td style="border-right: 1px solid #888;">L&#205;NGUA INGLESA</td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                10,00
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+                                S/N
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+                                S/N
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+                                S/N
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+                            </td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+
+                                --
+
+
+
+
+
+
+
+                            </td>
+
+                            <td class="nota" style="border-right: 1px solid #888;text-align: right;">
+
+                                0
+
+
+
+                            </td>
+
+
+                            <td width="50px" class="situacao">MATRICULADO</td>
+
+
+
+
+                            <!-- 							<td class="situacao"> -->
+
+                            <!-- 							</td> -->
+
+
+                        </tr>
+
+
+
+
+                        <tr class="linhaPar linha">
+                            <td nowrap="nowrap">RIOINFLPOR1</td>
+                            <td style="border-right: 1px solid #888;">L&#205;NGUA PORTUGUESA</td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                3,50
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                6,30
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+                                8,00
+
+
+                            </td>
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                9,00
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                3,80
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+                            </td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+
+                                --
+
+
+
+
+
+
+
+                            </td>
+
+                            <td class="nota" style="border-right: 1px solid #888;text-align: right;">
+
+                                0
+
+
+
+                            </td>
+
+
+                            <td width="50px" class="situacao">MATRICULADO</td>
+
+
+
+
+                            <!-- 							<td class="situacao"> -->
+
+                            <!-- 							</td> -->
+
+
+                        </tr>
+
+
+
+
+                        <tr class="linhaImpar linha">
+                            <td nowrap="nowrap">RIOINFMATE1</td>
+                            <td style="border-right: 1px solid #888;">MATEM&#193;TICA</td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                7,80
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                3,80
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+                                6,50
+
+
+                            </td>
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                4,00
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+                                10,0
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                S/N
+
+
+
+
+                            </td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+
+                                --
+
+
+
+
+
+
+
+                            </td>
+
+                            <td class="nota" style="border-right: 1px solid #888;text-align: right;">
+
+                                0
+
+
+
+                            </td>
+
+
+                            <td width="50px" class="situacao">MATRICULADO</td>
+
+
+
+
+                            <!-- 							<td class="situacao"> -->
+
+                            <!-- 							</td> -->
+
+
+                        </tr>
+
+
+
+
+                        <tr class="linhaPar linha">
+                            <td nowrap="nowrap">RIOINFMOMC1</td>
+                            <td style="border-right: 1px solid #888;">MONTAGEM E MANUTEN&#199;&#195;O DE COMPUTADORES
+                            </td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                7,00
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                7,00
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                7,70
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+                                S/N
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                S/N
+
+
+
+
+                            </td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+
+                                --
+
+
+
+
+
+
+
+                            </td>
+
+                            <td class="nota" style="border-right: 1px solid #888;text-align: right;">
+
+                                0
+
+
+
+                            </td>
+
+
+                            <td width="50px" class="situacao">MATRICULADO</td>
+
+
+
+
+                            <!-- 							<td class="situacao"> -->
+
+                            <!-- 							</td> -->
+
+
+                        </tr>
+
+
+
+
+                        <tr class="linhaImpar linha">
+                            <td nowrap="nowrap">RIOINFQUIM1</td>
+                            <td style="border-right: 1px solid #888;">QU&#205;MICA</td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                6,90
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                6,70
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                6,30
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+                                S/N
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                S/N
+
+
+
+
+                            </td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+
+                                --
+
+
+
+
+
+
+
+                            </td>
+
+                            <td class="nota" style="border-right: 1px solid #888;text-align: right;">
+
+                                6
+
+
+
+                            </td>
+
+
+                            <td width="50px" class="situacao">MATRICULADO</td>
+
+
+
+
+                            <!-- 							<td class="situacao"> -->
+
+                            <!-- 							</td> -->
+
+
+                        </tr>
+
+
+
+
+                        <tr class="linhaPar linha">
+                            <td nowrap="nowrap">RIOINFSEGT1</td>
+                            <td style="border-right: 1px solid #888;">SEGURAN&#199;A DO TRABALHO</td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                9,00
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                8,00
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                7,60
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+                                S/N
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+                            </td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+
+                                --
+
+
+
+
+
+
+
+                            </td>
+
+                            <td class="nota" style="border-right: 1px solid #888;text-align: right;">
+
+                                1
+
+
+
+                            </td>
+
+
+                            <td width="50px" class="situacao">MATRICULADO</td>
+
+
+
+
+                            <!-- 							<td class="situacao"> -->
+
+                            <!-- 							</td> -->
+
+
+                        </tr>
+
+
+
+
+                        <tr class="linhaImpar linha">
+                            <td nowrap="nowrap">RIOINFSOCI1</td>
+                            <td style="border-right: 1px solid #888;">SOCIOLOGIA</td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                7,30
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                6,50
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                7,00
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+                                1,00
+
+
+
+
+
+
+
+                            </td>
+
+                            <!-- Avalia&#231;&#227;o Substitutiva -->
+
+
+
+                            <!-- Avalia&#231;&#227;o Substitutiva 2 -->
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                --
+
+                            </td>
+
+
+
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+                                S/N
+
+
+
+
+                            </td>
+
+
+
+                            <td class="nota" style="border-right: 1px solid #888;">
+
+
+
+
+
+
+
+
+                                --
+
+
+
+
+
+
+
+                            </td>
+
+                            <td class="nota" style="border-right: 1px solid #888;text-align: right;">
+
+                                0
+
+
+
+                            </td>
+
+
+                            <td width="50px" class="situacao">MATRICULADO</td>
+
+
+
+
+                            <!-- 							<td class="situacao"> -->
+
+                            <!-- 							</td> -->
+
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- #122622 Solicitou remo&#231;&#227;o do quadro -->
+
+            <!-- 			<br	> -->
+
+            <!-- 			<table class="formulario"> -->
+            <!-- 				<tr> -->
+            <!-- 					<th>Total de Faltas:</th> -->
+
+            <!-- 				</tr> -->
+            <!-- 				<tr> -->
+            <!-- 					<th>Frequ&#234;ncia Total:</th> -->
+
+            <!-- 				</tr> -->
+            <!-- 			</table> -->
+
+
+
+
+
+        </div>
+        <div class="clear"> </div>
+        <br />
+        <div id="relatorio-rodape">
+            <p>
+                <table width="100%">
+                    <tr>
+                        <td class="voltar" align="left"><a href="javascript:history.back();"> Voltar </a></td>
+                        <td width="70%" align="center">
+                            <!-- Customizacao da descri&#231;&#227;o no rodap&#233; -->
+                            SIGAA | DTI - Diretoria da Tecnologia de Informa&#231;&#227;o - IFAL - www.ifal.edu.br |
+                            Copyright &copy; 2006-2022 - UFRN - app-03-sig.instancia3
+                            <!-- Fim customiza&#231;&#227;o -->
+                        </td>
+                        <td class="naoImprimir" align="right">
+                            <a onclick="javascript:window.print();" href="#">Imprimir</a>
+                        </td>
+                        <td class="naoImprimir" align="right">
+                            <a onclick="javascript:window.print();" href="#">
+                                <img alt="Imprimir" title="Imprimir"
+                                    src="/shared/javascript/ext-1.1/docs/resources/print.gif" />
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+
+        </div>
+    </div>
+
+    <!-- MYFACES JAVASCRIPT -->
+
+</body>
+
+</html>

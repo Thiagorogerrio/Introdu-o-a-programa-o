@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Revenda</title>
+</head>
+
+
+<body>
+
+    <h1>Revenda de carros TRM</h1>
+
+    <p>Modelo: <input type="text" id="inModelo" autofocus> </p>
+
+    <p>Preço R$:
+        <input type="text" id="inPreco">
+        <input type="button" value="Adicionar" id="btAdicionar">
+    </p>
+
+    <input type="button" value="Listar Todos" id="btListar">
+    <input type="button" value="Ordem Alfabética" id="btOrdem">
+    <input type="button" value="Filtrar por Preço" id="btFiltrar">
+
+    <pre id="outLista"></pre>
+
+    <script>
+        var carros = [];    // declara vetor global
+
+        carros.push({ mod: "Doblo", pr: 36000.00 });
+        carros.push({ mod: "Fusion", pr: 80000.00 });
+        carros.push({ mod: "Argo", pr: 75000.00 });
+        carros.push({ mod: "Virtus", pr: 88500.00 });
+        carros.push({ mod: "Amarok", pr: 108300.00 });
+        carros.push({ mod: "Onix", pr: 50000.00 });
+
+        // Cria referência aos elementos contendo os dados de entrada
+        var inModelo = document.getElementById("inModelo");
+        var inPreco = document.getElementById("inPreco");
+        var btAdicionar = document.getElementById("btAdicionar");
+        var btListar = document.getElementById("btListar");
+        var btOrdem = document.getElementById("btOrdem");
+        var btFiltrar = document.getElementById("btFiltrar");
+        var outLista = document.getElementById("outLista");
+
+        btAdicionar.addEventListener("click", adicionarCarros);
+        function adicionarCarros() {
+
+            var modelo = inModelo.value;  // obtém conteúdo dos campos
+            var preco = Number(inPreco.value);
+
+            // verifica preenchimento dos campos
+            if (modelo == "" || preco == 0 || isNaN(preco)) {
+                alert("Informe corretamente os dados");
+                inModelo.focus();
+                return;
+            }
+
+            // adiciona dados ao vetor de objetos
+            carros.push({ mod: modelo, pr: preco });
+
+            // limpa campos e posiciona cursor em inModelo
+            inModelo.value = "";
+            inPreco.value = "";
+            inModelo.focus();
+
+            listarCarros();   // chama function que lista os carros
+        } //fim função adicionarCarros
+
+        btListar.addEventListener("click", listarCarros);
+        function listarCarros() {
+            // verifica se vetor está vazio
+            if (carros.length == 0) {
+                alert("Não há carros na lista");
+                return;
+            }
+
+            var lista = "";     // para concatenar lista de carros
+
+            // percorre os elementos do vetor
+            for (var i = 0; i < carros.length; i++) {
+                // adiciona à lista, cada objeto do vetor
+                lista += (i + 1) + ". " + carros[i].mod + " - R$: " + carros[i].pr.toFixed(2) + "\n";
+            }
+
+            outLista.textContent = lista;
+        } //fim função listarCarros
+
+        btOrdem.addEventListener("click", ordemAlfabetica);
+        function ordemAlfabetica() {
+
+            var lista = ""
+
+
+            carros.sort(function (a, b) { return a.mod < b.mod ? -1 : a.mod > b.mod ? 1 : 0 })
+
+for (var i = 0; i < carros.length; i++) {
+
+    lista += (i + 1) + ". " + carros[i].mod + " - R$: " + carros[i].pr.toFixed(2) + "\n"
+
+}
+
+
+
+    outLista.textContent = lista
+
+
+        } // fim função ordemAlfabetica
+
+        btFiltrar.addEventListener("click", filtrarCarros);
+        function filtrarCarros() {
+        
+        
+        } // fim função filtrarCarros
+
+        function filtrar(){
+
+            var lista = ""
+
+
+            var info = Number(prompt("Até quantos R$ você deseja pagar?:  "))
+
+            
+           carros.sort(function (a, b) { return a.pr < b.pr ? -1 : a.pr > b.pr ? 1 : 0 })
+
+            for (var i = 0; i < carros.length; i++) {
+                if(carros[i].pr <= info){
+lista += (i + 1) + ".  " + carros[i].mod + " - R$: " + carros[i].pr.toFixed(2) + "\n"
+
+}
+            }
+
+
+
+
+outLista.textContent = lista
+
+
+
+
+        }
+
+        btFiltrar.addEventListener("click", filtrar)
+    </script>
+</body>
+
+</html>

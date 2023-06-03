@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Co.css">
+    <title>Consutório Odontológico</title>
+    <style>
+        .group {
+            margin-left: 300px;
+            margin-top: -300px;
+        }
+
+        h1 {
+            border-bottom: solid 2px rgb(153, 153, 153);
+        }
+
+        .fonteAzul {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="https://img.freepik.com/vetores-premium/dia-do-dentista-de-desenho-animado-de-dente-fofo_96373-347.jpg"
+        width="300px">
+    <div class="group">
+        <h1>Consutório Odontológico</h1>
+        <p>Paciente: <input type="text" name="" id="inPaciente" autofocus>
+            <input type="button" value="Adicionar" id="btAdicionar">
+            <input type="button" value="Urgência" id="btUrgencia">
+            <input type="button" value="Atender" id="btAtender">
+        </p>
+
+        <h3>Em atendimento: <span id="outAtendimento" class="fonteAzul"></span></h3>
+        <br>
+        <pre id="outLista"></pre>
+    </div>
+
+    <script>
+        var inPaciente = document.getElementById("inPaciente");
+        var btUrgencia = document.getElementById("btUrgencia");
+        var btAdicionar = document.getElementById("btAdicionar");
+        var btAtender = document.getElementById("btAtender");
+        var outAtendimento = document.getElementById("outAtendimento");
+        var outLista = document.getElementById("outLista");
+
+        var pacientes = [];
+
+        function mostrarPaciente() {
+
+            var nome = inPaciente.value
+
+            if (nome == "") {
+                alert("Por favor, informe o nome do paciente.");
+                inPaciente.focus();
+                return;
+            }
+
+            pacientes.push(nome);
+            var lista = "";
+
+            for (i = 0; i < pacientes.length; i++) {
+                lista += (i + 1) + ". " + pacientes[i] + "\n";
+            }
+
+            outLista.textContent = lista
+            inPaciente.value = "";
+            inPaciente.focus();
+        }
+        btAdicionar.addEventListener("click", mostrarPaciente);
+
+        function atenderPaciente() {
+            if (pacientes.length == 0) {
+                alert("Não há pacientes na lista de espera.");
+                inPaciente.focus();
+                return;
+            }
+
+            var atender = pacientes.shift();
+            outAtendimento.textContent = atender;
+            var lista = "";
+
+            for (i = 0; i < pacientes.length; i++) {
+                lista += (i + 1) + ". " + pacientes[i] + "\n";
+            }
+
+            outLista.textContent = lista;
+        }
+        btAtender.addEventListener("click", atenderPaciente);
+
+        function adicionarUrgencia() {
+            var nome = inPaciente.value
+            if (nome == "") {
+                alert("Informe o nome do paciente");
+                inPaciente.focus();
+                return;
+            }
+
+            pacientes.unshift(nome);
+            var lista = "";
+
+            for (i = 0; i < pacientes.length; i++) {
+                lista += (i + 1) + ". " + pacientes[i] + "\n";
+            }
+
+            outLista.textContent = lista;
+            inPaciente.value = "";
+            inPaciente.focus();
+        }
+        btUrgencia.addEventListener("click", adicionarUrgencia);
+    </script>
+</body>
+
+</html>

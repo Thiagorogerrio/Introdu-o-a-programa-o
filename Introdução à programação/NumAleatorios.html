@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Números Aleatórios</title>
+</head>
+
+<body>
+    <h1>Números Aleatórios</h1>
+    <p>Quantidade de números:
+        <input type="text" id="inQuantidade" autofocus>
+        <input type="button" value="Gerar" id="btGerar">
+    </p>
+    <p>
+        <input type="button" value="Ordem Crescente" id="btCrescente">
+        <input type="button" value="Ordem Decrescente" id="btDecrescente">
+        <input type="button" value="Localizar" id="btLocalizar">
+    </p>
+    <h3 pre id="outAleatorios"> </h3 pre>
+    <h3 pre id="outCrescente"> </h3 pre>
+    <h3 pre id="outDecrescente"></h3 pre>
+    <h3 pre id="outLocalizacao"></h3 pre>
+
+    <script>
+        var numeros = [];
+
+        var inQuantidade = document.getElementById("inQuantidade");
+
+
+        var btGerar = document.getElementById("btGerar");
+        var btCrescente = document.getElementById("btCrescente");
+        var btDecrescente = document.getElementById("btDecrescente");
+        var btLocalizar = document.getElementById("btLocalizar");
+
+
+        var outAleatorios = document.getElementById("outAleatorios");
+        var outCrescente = document.getElementById("outCrescente");
+        var outDecrescente = document.getElementById("outDecrescente");
+        var outLocalizacao = document.getElementById("outLocalizacao");
+
+
+
+        function gerarNumeros() {
+
+            numeros = []
+
+            var quantidade = inQuantidade.value
+
+
+
+
+            if (quantidade == "") {
+                alert("Por favor informe um número")
+                inAno.focus()
+                return;
+
+            }
+
+            if (isNaN(quantidade)) {
+                alert("Por favor insira números")
+                inAno.focus()
+                return;
+            }
+
+            if (quantidade == true){
+                btGerar.disabled = true
+
+
+
+            }
+
+
+
+
+            var lista = ""
+            var i = 1
+            var random
+            var box = ""
+
+            for (i = 1; i <= quantidade ; i++) {
+
+                random[i] = Math.floor(Math.random() * 21)
+
+                numeros.push(random)
+
+            }
+
+
+
+
+
+            outAleatorios.textContent = "Números gerados: \n\n" + numeros.join(", ")
+            outCrescente.textContent = ""
+            outDecrescente.textContent = ""
+            outLocalizacao.textContent = ""
+
+        }
+
+        btGerar.addEventListener("click", gerarNumeros);
+
+
+        function numerosCrescentes() {
+
+
+
+
+            numeros.sort(function (a, b) {
+                return a - b
+            })
+
+
+            outAleatorios.textContent = ""
+            outCrescente.textContent = "Ordem crescente: \n\n" + numeros.join(", ")
+            outDecrescente.textContent = ""
+            outLocalizacao.textContent = ""
+
+        }
+
+
+        btCrescente.addEventListener("click", numerosCrescentes)
+
+        function numerosDecrescente() {
+
+
+
+
+
+
+            numeros.reverse()
+
+
+            outAleatorios.textContent = ""
+            outDecrescente.textContent = "Ordem decrescente: \n\n" + numeros.join(", ")
+            outCrescente.textContent = ""
+            outLocalizacao.textContent = ""
+        }
+
+        btDecrescente.addEventListener("click", numerosDecrescente)
+
+        function Localizar() {
+
+            var valor = Number(prompt("Qual valor você deseja localizar no vetor?"))
+
+            var box = numeros.indexOf(valor)
+
+            if (valor < 0) {
+                alert("Não temos esse valor")
+
+
+            }
+
+            outAleatorios.textContent = ""
+            outLocalizacao.textContent = 'O número está no índice ' + box
+            outCrescente.textContent = ""
+            outDecrescente.textContent = ""
+        }
+
+        btLocalizar.addEventListener("click", Localizar)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>IFAL-FLIX</title>
+</head>
+
+<style>
+    img.alta {
+        float: left;
+        height: 400px;
+        width: 450px;
+    }
+
+    h1 {
+        border-bottom-style: inset;
+    }
+
+    pre {
+        font-size: 1.2em;
+    }
+</style>
+
+<body>
+
+    <h1>IFALFLIX - Filmes e séries</h1>
+
+    <p>Título:
+        <input type="text" id="inTitulo" autofocus>
+    </p>
+
+    <p>Ano lançamento:
+        <input type="text" id="inAno">
+        <input type="button" value="Adicionar" id="btAdicionar">
+    </p>
+
+    <p>
+        <input type="button" value="Listar por Título" id="btListarTitulo">
+        <input type="button" value="Listar por ano" id="btListarAno">
+        <input type="button" value="Filtrar" id="btFiltrar">
+    </p>
+
+    <pre id="outLista"></pre>
+    <pre id="outListaTitulo"></pre>
+    <pre id="outListaAno"></pre>
+    <pre id="outFiltro"></pre>
+
+    <script>
+
+        var filmes = []
+
+        filmes.push({ ttl: "Matrix 4", an: 2022 })
+
+        filmes.push({ ttl: "Homem aranha", an: 2013 })
+
+        filmes.push({ ttl: "Carros 2", an: 2007 })
+
+        filmes.push({ ttl: "Rei leão", an: 2015 })
+
+        filmes.push({ ttl: "Jojo o filme", an: 2000 })
+
+
+
+
+
+
+        var inTitulo = document.getElementById("inTitulo");
+        var inAno = document.getElementById("inAno");
+
+        var btAdicionar = document.getElementById("btAdicionar");
+        var btListarTitulo = document.getElementById("btListarTitulo");
+        var btListarAno = document.getElementById("btListarAno");
+        var btFiltrar = document.getElementById("btFiltrar");
+
+        var outLista = document.getElementById("outLista");
+        var outListaTitulo = document.getElementById("outListaTitulo");
+        var outListaAno = document.getElementById("outListaAno");
+        var outFiltro = document.getElementById("outFiltro");
+
+
+
+        function adicionarFilme() {
+
+
+
+            var ttl = inTitulo.value
+            var ano = Number(inAno.value)
+
+            if (ttl == "") {
+                alert("Por favor informe o título")
+                inTitulo.focus()
+                return;
+
+
+            }
+
+            if (ano == "") {
+                alert("Por favor informe o ano de lançamento")
+                inAno.focus()
+                return;
+
+            }
+
+            if (isNaN(ano)) {
+                alert("Por favor insira números")
+                inAno.focus()
+                return;
+            }
+
+
+            if (ano > 2022) {
+                alert("Só temos filmes de 2022 pra baixo")
+                inTitulo.focus()
+                return;
+
+            }
+
+
+
+            filmes.push({ ttl: ttl, an: ano })
+            var lista = ""
+
+
+            for (var i = 0; i < filmes.length; i++) {
+                lista += (i + 1) + "." + filmes[i].ttl + " - " + filmes[i].an + "\n"
+            }
+
+            outLista.textContent = lista
+            outListaTitulo.textContent = ""
+            outListaAno.textContent = ""
+            inTitulo.focus()
+
+        }
+        btAdicionar.addEventListener("click", adicionarFilme);
+
+        function listarportitulo() {
+
+            outListaAno.textContent = ""
+
+
+            var listatitulo = "Em ordem alfabética: \n\n"
+
+
+            filmes.sort(function (a, b) { return a.ttl < b.ttl ? -1 : a.ttl > b.ttl ? 1 : 0 })
+
+            for (var i = 0; i < filmes.length; i++) {
+
+                listatitulo += (i + 1) + "." + filmes[i].ttl + " - " + filmes[i].an + "\n"
+
+            }
+
+            outListaTitulo.textContent = listatitulo
+            outListaAno.textContent = ""
+            outLista.textContent = ""
+
+        }
+
+        btListarTitulo.addEventListener("click", listarportitulo)
+
+        function listarporano() {
+
+            outFiltro
+            outLista
+            outListaTitulo
+
+            var listaano = "Em ordem de lançamento: \n\n"
+
+
+            filmes.sort(function (a, b) { return a.an < b.an ? -1 : a.an > b.an ? 1 : 0 })
+
+            for (var i = 0; i < filmes.length; i++) {
+                listaano += (i + 1) + "." + filmes[i].ttl + " - " + filmes[i].an + "\n"
+            }
+
+            outListaAno.textContent = listaano
+            outListaTitulo.textContent = ""
+            outLista.textContent = ""
+
+        }
+
+        btListarAno.addEventListener("click", listarporano)
+
+        function Filtrar() {
+
+            var info = Number(prompt("Deseja listar com até quantos anos de lançamento?"))
+
+            if(info == "" || isNaN(info)){
+
+                alert("Por favor insira um valor válido")
+                return
+
+            }
+
+
+
+
+            var cal = 2022 - info
+            var listaano = "Filmes até " + cal + ":\n\n"
+            var j = 0
+            filmes.sort(function (a, b) { return a.an < b.an ? -1 : a.an > b.an ? 1 : 0 })
+
+            for (i = 0; i < filmes.length; i++) {
+                if (filmes[i].an >= cal) {
+                    listaano += (j + 1) + "." + filmes[i].ttl + " - " + filmes[i].an + "\n"
+                    j++
+                }
+            }
+
+            outListaAno.textContent = ""
+            outListaTitulo.textContent = ""
+            outLista.textContent = ""
+            outFiltro.textContent = listaano
+        }
+
+        btFiltrar.addEventListener("click", Filtrar)
+    </script>
+</body>
+
+</html>

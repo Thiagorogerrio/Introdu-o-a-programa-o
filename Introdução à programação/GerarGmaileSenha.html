@@ -1,0 +1,151 @@
+<DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>e-mail e Senha</title>
+    </head>
+
+    <body>
+        <h1> Programa e-mail e senha </h1>
+        <p>
+
+            <span>Selecione vínculo:</span>
+            <select id="inVinculo">
+                <option value="aluno"> Aluno</option>
+                <option value="professor"> Professor</option>
+                <option value="administrativo"> Administrativo</option>
+            </select>
+
+        </p>
+        <p> Nome:
+            <input type="text" id="inNome">
+            <input type="button" value="Gerar e-mail e senha" id="btGerar">
+        </p>
+
+        <h3 id="outEmail"></h3>
+        <h3 id="outSenha"></h3>
+
+        <script>
+            var inVinculo = document.getElementById("inVinculo")
+            var inNome = document.getElementById("inNome")
+            var btGerar = document.getElementById("btGerar")
+            var outSenha = document.getElementById("outSenha")
+            var outEmail = document.getElementById("outEmail")
+
+            btGerar.addEventListener("click", obterEntradas)
+
+            function obterEntradas() {
+
+                var nome = inNome.value;
+                if (nome == "" || nome.indexOf(" ") == -1) {
+                    alert("Informe o nome completo");
+                    inNome.focus;
+                    return;
+
+                }
+
+                gerarSenha(nome);
+
+                var vinculo = inVinculo.selectedIndex;
+                switch (vinculo) {
+                    case 0:
+                        emailAluno(nome);
+                        break;
+                    case 1:
+                        emailProf(nome);
+                        break;
+                    case 2:
+                        emailAdm(nome);
+                        break;
+                }
+
+            } // fecha a função obterEntradas
+            function gerarSenha(nome) {
+                outSenha.textContent = "Senha inicial: " + obterUltimoNome(nome) + contarVogais(nome);
+            }
+
+            inNome.placeholder = "Digite o nome completo"
+
+            inNome.addEventListener("blur", function () {
+                inNome.placeholder = ""
+            })
+
+            inNome.addEventListener("keypress", function (tecla) {
+                if (tecla.keyCode == 13) {
+                    obterEntradas()
+                }
+            })
+
+
+            function obterUltimoNome(nome) {
+
+                var ultimoEspaco = nome.lastIndexOf(" ");
+                return nome.substr(ultimoEspaco + 1).toLowerCase();
+
+
+            }
+
+
+            function contarVogais(nome) {
+
+                var num = 0
+                var vogais = "AEIOU"
+                var letra
+
+                for (var i = 0; i < nome.length; i++) {
+                    letra = nome.charAt(i).toUpperCase()
+
+                    if (vogais.indexOf(letra) >= 0) {
+                        num++
+                    }
+                }
+
+                return num < 10 ? "0" + num : num;
+
+            }
+
+            function emailAluno(nome) {
+
+                var partes = nome.split(" ");
+                var ultimoNom = "";
+                var tam = partes.length;
+
+
+                for (var i = 0; i < tam - 1; i++) {
+                    ultimoNom += partes[i].charAt(0)
+
+                }
+
+                ultimoNom += partes[tam - 1] + "@ifal.edu.br"
+
+                outEmail.textContent = "E-mail: " + ultimoNom.toLowerCase();
+
+
+            }
+
+            function emailProf(nome) {
+
+                var primEspaco = nome.split(" ")
+                var tam = primEspaco.length;
+                var professor = primEspaco[0] + "." + primEspaco[tam - 1];
+
+
+
+                outEmail.textContent = "E-mail: " + professor.toLowerCase() + "@ifal.edu.br"
+            }
+
+
+            function emailAdm(nome) {
+
+                var primeiroEspaco = nome.split(" ")
+
+                var adm = primeiroEspaco[0]
+
+                outEmail.textContent = "E-mail: " + adm.toLowerCase() + "_adm@ifal.edu.br"
+
+            }
+        </script>
+    </body>
+
+    </html>

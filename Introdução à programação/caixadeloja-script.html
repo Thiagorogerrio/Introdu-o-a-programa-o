@@ -1,0 +1,47 @@
+<script>
+
+const TAXA_JUROS = 2 / 100
+const TAXA_MULTA = 0.33 / 100
+
+var dataVenc = prompt("Por favor insira a data no formato: dd/mm/aaaa")
+
+var valor = Number(prompt("Insira o valor da conta"))
+
+var hoje = new Date()
+var vencto = new Date()
+
+var partes = dataVenc.split("/")
+
+vencto.setDate(Number(partes[0]))
+vencto.setMonth(Number(partes[1]) -1)
+vencto.setFullYear(Number(partes[2]))
+
+var atraso = hoje - vencto
+
+var juros = 0
+var multa = 0
+
+if(atraso > 0){
+
+var dias = Math.round(atraso / 86400000)
+
+multa = valor * TAXA_MULTA
+juros = valor * TAXA_JUROS * dias
+
+
+}
+
+var total = valor + multa + juros
+
+document.write("Taxa de Multa R$:  " + multa.toFixed(2) + "<br><br>" + "Taxa de Juros R$: " + juros.toFixed(2) + "<br><br>" + "Valor total R$:  " + valor.toFixed(2))
+
+
+
+
+
+
+
+
+
+
+</script>

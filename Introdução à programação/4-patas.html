@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Clínica Veterinária</title>
+</head>
+
+<style>
+    h1 {
+        border-bottom-style: inset;
+    }
+
+    img.normal {
+        float: left;
+        height: 500px;
+        width: 600px;
+    }
+
+    .aDireita {
+        text-align: right;
+    }
+
+    select {
+        width: 150px;
+    }
+
+    .oculta {
+        display: none;
+    }
+
+    .exibe {
+        display: inline;
+    }
+</style>
+
+    <body>
+        <img src="https://blog.cobasi.com.br/wp-content/uploads/2020/11/clinica-veterinaria-principal.png" alt="Exercícios" class="normal">
+
+        <h1>Clínica 4 patas</h1>
+
+        <p>Valor da Vacina:
+            <input type="text" id="inValor" class="aDireita" autofocus>
+        </p>
+
+        <p>Possui Convênio:
+            <input type="radio" name="produto" id="rbSim"> Sim
+            <input type="radio" name="produto" id="rbNao" checked> Não
+        </p>
+
+        <p class="oculta" id="pConvenio"> Convênio:
+            <select id="selConvenio">
+                <option value="amigo">Amigo dos Animais</option>
+                <option value="saude">Saúde Animal</option>
+                <option value="pet">Pet-Love</option>
+            </select>
+        </p>
+
+        <p>
+            <input type="button" value="Calcular Desconto" id="btCalcular">
+            <input type="button" value="Limpar Campos" id="btLimpar">
+        </p>
+
+        <h3 id="outDesconto"></h3>
+        <h3 id="outPagar"></h3>
+
+        <script>
+            // cria referência aos elementos da página
+            var inValor = document.getElementById("inValor");
+            var rbSim = document.getElementById("rbSim");
+            var rbNao = document.getElementById("rbNao");
+            var pConvenio = document.getElementById("pConvenio");
+            var selCnvenio = document.getElementById("selConvenio");
+            var btCalcular = document.getElementById("btCalcular");
+            var btLimpar = document.getElementById("btLimpar");
+            var outDesconto = document.getElementById("outDesconto");
+            var outPagar = document.getElementById("outPagar");
+
+            rbSim.addEventListener("change", mostrarConvenio);
+            rbNao.addEventListener("change", mostrarConvenio);
+
+            inValor.addEventListener("focus", function () {
+                inValor.placeholder = "R$";
+            })
+
+
+
+            inValor.addEventListener("blur", function () {
+                inValor.placeholder = "";
+            })
+
+
+
+            inValor.addEventListener("keypress", (tecla) => {
+                if (tecla.key === "Enter") {
+                    calcularVacina();
+                }
+            })
+
+
+
+            if(inValor == "" || inValor)
+
+            btLimpar.addEventListener("click", () => location.reload());
+
+            function mostrarConvenio() {
+                if (rbSim.checked) {
+                    pConvenio.className = "exibe";
+                }
+                else {
+                    pConvenio.className = "oculta";
+                }
+            }
+
+            
+
+            function calcularVacina() {
+
+                var convenio = selCnvenio.selectedIndex;
+                var valor = Number(inValor.value);
+                var desconto;
+                var totalPagar;
+
+                if (rbNao.checked) {
+                    desconto = valor * 0.10;
+                    totalPagar = valor - desconto;
+
+                } else {
+                    switch (convenio) {
+                        case 0:
+                            desconto = valor * 0.20;
+                            totalPagar = valor - desconto;
+                            break;
+                        case 1:
+                            desconto = valor * 0.30;
+                            totalPagar = valor - desconto;
+                            break;
+                        case 2:
+                            desconto = valor * 0.50;
+                            totalPagar = valor - desconto;
+                            break;
+                    }
+                }
+
+                outDesconto.textContent = "Desconto R$: " + desconto.toFixed(2);
+                outPagar.textContent = "A Pagar R$: " + totalPagar.toFixed(2);
+            }
+            
+            btCalcular.addEventListener("click", calcularVacina);
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCtipo html>
+	<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Relogio binário</title>
+	</head>
+
+	<body onload="atualizaRelogio()">
+		<h1>Horário oficial: <span id="outHorario"></span><br> </h1>
+
+		<h1>Hora: <p id="outHora"> </p><br><br></h1>
+		<h1>Minuto: <p id="outMinuto"> </p><br><br></h1>
+		<h1>Segundo: <p id="outSegundo"></p><br><br></h1>
+
+		<script>
+			var outHorario = document.getElementById("outHorario")
+			var outHora = document.getElementById("outHora")
+			var outMinuto = document.getElementById("outMinuto")
+			var outSegundo = document.getElementById("outSegundo")
+
+			function atualizaRelogio() {
+				var momentoAtual = new Date()
+				var hora = momentoAtual.getHours()
+				var minuto = momentoAtual.getMinutes()
+				var segundo = momentoAtual.getSeconds()
+
+				if (hora <= 9) {
+					hora = "0" + hora
+				}
+				if (minuto <= 9) {
+					minuto = "0" + minuto
+				}
+				if (segundo <= 9) {
+					segundo = "0" + segundo
+				}
+
+				var horarioImprimivel = hora + ":" + minuto + ":" + segundo
+				outHorario.textContent = horarioImprimivel
+
+				//outHora.innerHTML 
+				//outMinuto.innerHTML 
+				//outSegundo.innerHTML 
+
+				setTimeout("atualizaRelogio()", 1000)
+			}
+
+			function convert_dec_bin(Nbits, dec) {
+				var resultado = ""
+
+				while (dec > 0) {
+					resultado = resultado + dec % 2
+					dec = parseInt(dec / 2)
+				}
+
+				var relogio = [];
+				relogio[0] = '<div style = "border:2px solid green; height:53px; width:53px; float:left; margin:5px;"></div>'
+				relogio[1] = '<div style = "background-color:green; height:57px; width:57px; float:left; margin:5px;"></div>'
+
+				var quadradinhos = ""
+				for (var i = (Nbits - 1); i >= 0; i--) {
+					if (resultado.substr(i, 1) == "") {
+						quadradinhos = quadradinhos + relogio[0]
+					}
+					else {
+						quadradinhos = quadradinhos + relogio[resultado.substr(i, 1)]
+					}
+				}
+				return quadradinhos
+			}
+
+		</script>
+	</body>
+
+	</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            body{
+                background-color:whitesmoke;
+            }
+            .w3-card-4{
+                margin: auto;
+                width: 50%;
+                padding: 15px;
+            }
+        </style>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <title>MMC e MDC</title>
+    </head>
+
+    <body>
+        <div class="w3-container w3-teal">
+            <h1 align="center">MDC e MMC</h1>
+        </div>
+        <br>
+        <div align="center" class="w3-card-4">
+            <p align="left">1° número: <input class="w3-input" type="text" id="inNum1"></p>
+            <p align="left">2° número: <input class="w3-input" type="text" id="inNum2"></p>
+            <p><input class="w3-btn w3-teal w3-round-xlarge" type="button" value="Mostrar MDC e MMC" id="btCalcular"></p>
+            <pre id="outResposta1"></pre>
+            <h3 id="outResposta2"></h3>
+            <h3 id="outResposta3"></h3>
+        </div>
+
+        <script>
+            function bom(){
+                var inNum1 = document.getElementById("inNum1")
+                var inNum2 = document.getElementById("inNum2")
+                var outResposta1 = document.getElementById("outResposta1")
+                var outResposta2 = document.getElementById("outResposta2")
+                var outResposta3 = document.getElementById("outResposta3")
+
+                var num1 = Number(inNum1.value)
+                var num2 = Number(inNum2.value)
+                var mult = num1*num2
+                var resposta = "Divisores: \n"
+                var maior = 0
+
+                for(i = 1 ; i <= num2 ; i++){
+
+                    if(num1 % i == 0 && num2 % i == 0){
+                        resposta = resposta + i +"\n"
+                    if(i > maior){
+                        maior = i
+                        }
+                    }
+                }
+
+                var conta = num1 + " x " + num2 + " = " + mult
+                outResposta1.textContent = resposta + "\n" + conta
+                outResposta2.textContent = "MDC(" + num1 + "," + num2 + ") = " + maior
+                outResposta3.textContent = "MMC(" + num1 + "," + num2 + ") = " + mult / maior
+
+            }
+            var btCalcular = document.getElementById("btCalcular")
+            btCalcular.addEventListener("click", bom)
+        </script>
+    </body>
+</html>

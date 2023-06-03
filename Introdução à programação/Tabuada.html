@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tabuada</title>
+</head>
+<body>
+
+    <p>Insira o Número que você deseja ver a Tabuada até 10</p>
+    <p>Número <input type="text" id="iNnumero"></p>
+    <p><input type = "button" value="Mostrar tabuada" id="btMostrar"></p>
+
+    <pre id="outTabuada"></pre>
+
+    <script>
+
+function exibir(){
+
+
+    var iNnumero = document.getElementById("iNnumero")
+    var outTabuada = document.getElementById("outTabuada")
+
+
+
+    var i
+    var mult
+    var num = Number(iNnumero.value)
+    var resposta = "Tabuada: \n"
+    var verificar   
+
+    if(num == ""){
+
+alert("Por favor insira um número")
+
+        return
+        iNnumero.focus()
+    }
+        
+    if(isNaN(num)){
+
+alert("Por favor digite números não letras")
+
+return
+iNnumero.focus()
+    }
+
+        for(i = 1 ; i <= 10; i++){
+        
+        
+            mult = num * i
+        
+        
+        resposta = resposta + num + "  x  " + i + "  =   " + mult  + "\n"
+        
+        
+        
+        }
+        
+    outTabuada.textContent = resposta
+        
+    }
+        
+    var btMostrar = document.getElementById("btMostrar")
+        btMostrar.addEventListener("click", exibir)
+
+        </script>
+
+
+</body>
+</html>
