@@ -1,0 +1,56 @@
+body {
+    background-color: #011517;
+}
+
+.container-filmes {
+    display: flex;
+    flex-wrap: wrap;
+    /*Os itens não ficarão em uma única linha */
+    gap: 12px;
+    /*Espaçamento entre os itens*/
+}
+
+/* Para criar uma classe, inicie com ponto */
+.card {
+    border: solid 1px #005;
+    border-radius: 8px;
+    /* Arredonda as quinas */
+    padding: 12px;
+    /* Espaço entre a borda e o conteúdo interno */
+
+    font-family: 'Segoe UI', 'Tagoe';
+
+    background-color: #00272B;
+    color: #f1d4d4;
+
+    box-shadow: 4px 4px 16px black;
+}
+
+.card:hover {
+
+    box-shadow: 4px 4px 16px rgb(255, 0, 0)
+}
+
+.card img {
+    width: 240px;
+}
+
+.nome {
+    color: #FFDD00;
+    font-size: 20pt;
+}
+
+.diretor {
+    color: #999999;
+}
+
+.anoDeLancamento {
+    color: #cccccc;
+}
+
+.genero {
+    color: #ff6600;
+    text-align: right;
+    font-size: 20pt;
+    font-weight: 700;
+}
